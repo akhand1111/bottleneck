@@ -12,14 +12,15 @@ jobs:
     fast_finish: true
     include:
         - os: linux
-          arch: arm64
+          arch: amd64
           env: TEST_DEPS="numpy"
                PYTHON_VERSION="3.7"
                PYTHON_ARCH="64"
-
         - os: linux
-          arch: ppc64le
-          env: TEST_DEPS="numpy gfortran_linux-ppc64le=8.2.0"
+          arch: arm64-graviton2
+          virt: lxd
+          group: edge
+          env: TEST_DEPS="numpy"
                PYTHON_VERSION="3.7"
                PYTHON_ARCH="64"
 
